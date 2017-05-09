@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
 from .forms import EmailContactForm
+from cart.forms import CartAddProductForm
 from django.core.mail import send_mail
 from django.views import View
 from django.views.generic import DetailView, ListView
@@ -39,7 +40,9 @@ class ProductDetailView(DetailView):
         product = get_object_or_404(Product, id=self.kwargs['id'],
                     slug=self.kwargs['slug'],
                     available=True)
+        cart_product_form = CartAddProductForm()
         context['product'] = product
+        context['cart_product_form'] = cart_product_form
         return context
 
 class ContactView(View):
