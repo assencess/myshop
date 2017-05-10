@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop',
     'cart',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,7 @@ EMAIL_HOST_USER = 'assncess@gmail.com'
 EMAIL_HOST_PASSWORD = 'rtygvbngr1298'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Static files (CSS, JavaScript, Images)

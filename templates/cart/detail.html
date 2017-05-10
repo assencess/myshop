@@ -53,6 +53,6 @@
     <a href="{% url 'shop:product_list' %}" class="button light">
       Continue
     </a>
-    <a href="#" class="checkout">Checkout</a>
+    <a href="{% url 'orders:order_create' %}" class="checkout">Checkout</a>
   </p>
 {% endblock %}
